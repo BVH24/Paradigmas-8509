@@ -1,0 +1,66 @@
+package com.mycompany.actividad3;
+
+import java.util.Scanner;
+
+
+public class Actividad3 {
+
+    public static void main(String[] args) {
+
+        Scanner calculo = new Scanner(System.in);
+        int Tipo_de_Cuenta = 0;
+        float Monto_calculado;
+
+
+        System.out.println("Cuentas de ahorro Banco XYZ");
+        System.out.println("");
+        System.out.println("Bienvenido al Sistema de simulacion de creacion en nuestro banco");
+        System.out.println("Este sistema se implemento para que el usuario vea lo que podria ahorrar en un determinado tiempo segun la cuenta que quiera abrir en nuestro banco");
+        System.out.println("esto ayudaria a que puedan ver como funcionaria la cuenta que escogieran y asi tener un ambiente mas transparente con nuestro futuro publico");
+        System.out.println("Las cuentas tienen distinta tasa de interes, porfavor escoga el tipo de cuenta que desea abrir:");
+        System.out.println("   ");
+        System.out.println(" 1. Cuenta de ahorro 1,0% con plazo de un ano");
+        System.out.println(" 2. Cuenta corriente 0,5% con plazo de un ano");
+        System.out.println(" 3. Cuenta a plazo fijo 1,2% y tiene solo limite de solo 3 o 6 meses");
+        System.out.println("Seleccione la cuenta de su preferencia:");
+        Tipo_de_Cuenta = calculo.nextInt();
+
+
+        switch(Tipo_de_Cuenta){
+            case 1:
+                System.out.println("Se ha seleccionado la opcion de Cuenta de ahorro");
+                System.out.println("Cantidad a ingresar de dinero:");
+                int monto_de_ahorro = calculo.nextInt();
+                Monto_calculado =(float)(monto_de_ahorro + (monto_de_ahorro*0.01));
+                System.out.println("El ahorro que tendra en total dentro de 1 ano es:"+Monto_calculado);
+                break;
+            case 2:
+                System.out.println("Se ha seleccionado la opcion de Cuenta de corriente");
+                System.out.println("Cantidad a ingresar de dinero:");
+                int monto_de_corriente = calculo.nextInt();
+                Monto_calculado =(float)(monto_de_corriente + (monto_de_corriente*0.05));
+                System.out.println("El ahorro que tendra en total dentro de 1 ano es:"+Monto_calculado);
+                break;
+            case 3:
+                System.out.println("Se ha seleccionado la opcion de Cuenta de Plazo fijo");
+                System.out.println("Elija las opciones de plazo");
+                System.out.println("1. 3 meses");
+                System.out.println("2. 6 meses");
+                int Plazo_seleccionado = calculo.nextInt();
+                if(Plazo_seleccionado > 1){
+                    System.out.println("Cantidad a ingresar de dinero:");
+                    int Cantidad_plazo_fijo = calculo.nextInt();
+                    Monto_calculado =(float)(6*(Cantidad_plazo_fijo +(Cantidad_plazo_fijo*0.012)));
+                    System.out.println("El ahorro que tendra en total dentro de 6 meses es:"+Monto_calculado);
+                }
+            default:{
+                System.out.println("Cantidad a ingresar:");
+                int Cantidad_plazo_fijo = calculo.nextInt();
+                Monto_calculado =(float)(3*(Cantidad_plazo_fijo +(Cantidad_plazo_fijo*0.012)));
+                System.out.println("El ahorro que tendra en total dentro de 3 meses es:"+Monto_calculado);
+
+            }
+            break;
+        }
+    }
+}
